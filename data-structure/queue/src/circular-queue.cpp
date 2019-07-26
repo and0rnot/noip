@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstdio>
 using namespace std;
 
 const int kMax = 7;
@@ -39,8 +40,9 @@ int main() {
 
         if (n == 1) {
             x++;
-            string s = "color" + to_string(x);
-            if (enqueue(s) == false)
+            char a[64];
+            sprintf(a, "color%d", x);
+            if (enqueue(a) == false)
                 cout << "enqueue err" << endl;
         }
 

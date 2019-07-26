@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstdio>
 using namespace std;
 
 typedef struct Node {
@@ -7,33 +8,33 @@ typedef struct Node {
     struct Node* next;
 } *NodePtr, Node;
 
-NodePtr head = nullptr;
-NodePtr tail = nullptr;
+NodePtr head = NULL;
+NodePtr tail = NULL;
 
 void enqueue(string s) {
-    if (head == nullptr) {
+    if (head == NULL) {
         head = new Node;
         head->data = s;
-        head->next = nullptr;
+        head->next = NULL;
         tail = head;
     } else {
         NodePtr tmp = new Node;
         tmp->data = s;
-        tmp->next = nullptr;
+        tmp->next = NULL;
         tail->next = tmp;
         tail = tmp;
     }
 }
 
 string dequeue() {
-    if (head != nullptr) {
+    if (head != NULL) {
         string ret;
         NodePtr tmp = head;
         ret = tmp->data;
         head = head->next;
         delete tmp;
-        if (head == nullptr)
-            tail = nullptr;
+        if (head == NULL)
+            tail = NULL;
         return ret;
     } else {
         return "";
@@ -49,8 +50,9 @@ int main() {
 
         if (n == 1) {
             x++;
-            string s = "color" + to_string(x);
-            enqueue(s);
+            char a[64];
+            sprintf(a, "color%d", x);
+            enqueue(a);
         }
 
         if (n == 2) {
