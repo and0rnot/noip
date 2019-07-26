@@ -6,7 +6,7 @@ int main() {
     int a[10] = {133, 228, 1, 5 , 4, 0};
     // [fist, last) not include last
     sort(a, a+6);
-    for (int i = 1; i <= 6; i++)
+    for (int i = 0; i < 6; i++)
         cout << a[i] << " ";
     cout << endl;
     
